@@ -2,13 +2,13 @@ name: okteto-demo-2
 build:
   silly-demo:
     context: .
-    dockerfile: Dockerfile
+    image: vfarcic/silly-demo:latest
 deploy:
   - kubectl apply -f k8s
 dev:
   silly-demo:
     image: vfarcic/silly-demo:latest
-    command: bash
+    command: /bin/sh
     workdir: /src
     sync:
       - .:/src
@@ -16,4 +16,3 @@ dev:
       - name=$USER
     forward:
       - 8080:8080
-
