@@ -2,13 +2,13 @@ name: okteto-demo-2
 build:
   silly-demo:
     context: .
-    # image: vfarcic/silly-demo:latest
+    image: vfarcic/silly-demo:latest
 deploy:
   - kubectl apply -f k8s
 dev:
   silly-demo:
-    image: vfarcic/silly-demo:latest
-    command: sh
+    image: golang
+    command: bash
     workdir: /src
     sync:
       - .:/src

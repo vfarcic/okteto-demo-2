@@ -9,10 +9,6 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.GET("/fibonacci", fibonacciHandler)
-	r.POST("/slack", slackHandler)
-	r.POST("/video", videoPostHandler)
-	r.GET("/videos", videosGetHandler)
 	r.GET("/", rootHandler)
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
