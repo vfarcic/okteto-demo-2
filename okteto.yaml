@@ -2,9 +2,9 @@ name: okteto-demo-2
 build:
   silly-demo:
     context: .
-    image: vfarcic/silly-demo:latest
+    image: okteto.dev/silly-demo
 deploy:
-  - kubectl apply -f k8s
+  - helm upgrade --install silly-demo chart --set image=${OKTETO_BUILD_SILLY_DEMO_IMAGE}
 dev:
   silly-demo:
     image: golang
@@ -16,3 +16,4 @@ dev:
       - name=$USER
     forward:
       - 8080:8080
+
