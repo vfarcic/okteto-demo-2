@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "fullname" . }}
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+    dev.okteto.com/generate-host: "true"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+           name: {{ template "fullname" . }}
+           port:
+             number: 8080
+    host: acme.com
