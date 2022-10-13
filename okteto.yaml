@@ -5,8 +5,8 @@ build:
     image: okteto.dev/silly-demo
     # image: vfarcic/silly-demo
 deploy:
-  - kubectl apply -f k8s
-  # - helm upgrade --install silly-demo chart --set image=${OKTETO_BUILD_SILLY_DEMO_IMAGE}
+  # - kubectl apply -f k8s
+  - helm upgrade --install silly-demo chart --set image=${OKTETO_BUILD_SILLY_DEMO_IMAGE}
 dev:
   silly-demo:
     image: golang
