@@ -7,7 +7,7 @@ build:
 deploy:
   # - kubectl apply -f k8s
   - env
-  - helm upgrade --install silly-demo chart --set image=${OKTETO_BUILD_API_IMAGE}
+  - helm upgrade --install silly-demo chart --set image=${80OKTETO_BUILD_SILLY_DEMO_IMAGE}
 dev:
   silly-demo:
     image: golang
