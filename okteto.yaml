@@ -2,7 +2,7 @@ name: okteto-demo-2
 build:
   silly-demo:
     context: .
-    image: silly-demo:latest
+    image: vfarcic/silly-demo:latest
 deploy:
   - kubectl apply -f k8s
 dev:
